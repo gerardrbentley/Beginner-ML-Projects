@@ -28,7 +28,10 @@ Using the gitpod link should present you with a screen like the following to use
 After confirming, you should soon see a screen like the following.
 It will take some time (less than 2 minutes most likely) for it to download and install the necessary packages.
 
-Once you see the "You can now view your Streamlit app in the browser." message it should open a new tab
+Once you see the "You can now view your Streamlit app in the browser." message it should open a new tab.
+Otherwise click the link provided in the terminal.
+
+![Gitpod vs code in browser](images/2022-06-30-15-53-37.png)
 
 ## Local Setup
 
