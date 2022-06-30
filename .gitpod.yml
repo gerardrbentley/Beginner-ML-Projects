@@ -1,6 +1,9 @@
 tasks:
   - init: pip3 install -r requirements.txt
-    command: streamlit run streamlit_app.py --server.enableCORS=false
+    command: streamlit run streamlit_app.py --browser.serverAddress $(echo "$GITPOD_WORKSPACE_URL" | sed 's/\/\//\/\/8501-/')
 ports:
   - port: 8501
     onOpen: open-browser
+vscode:
+  extensions:
+    - ms-python.python

@@ -7,7 +7,7 @@ Built with ❤️ by [Gerard Bentley](https://github.com/gerardrbentley)
 <a href="https://gitpod.io/#https://github.com/gerardrbentley/Beginner-ML-Projects" rel="nofollow noopener noreferrer" target="_blank" class="after:hidden"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod"></a>
 
 Click the gitpod link above to set up your own development environment in the cloud without downloading or installing anything!
-(See below for local setup instructions)
+(See below for more information and local setup instructions)
 
 ## What's this?
 
@@ -18,6 +18,17 @@ Click the gitpod link above to set up your own development environment in the cl
 - `.gitignore`: Tells git to avoid comitting / scanning certain local-specific files
 - `.streamlit/config.toml`: Customizes the behaviour of streamlit without specifying command line arguments (`streamlit config show`)
 - `.gitpod.yml`: Special file to tell Gitpod how to start running your app (see [docs](https://www.gitpod.io/docs/config-gitpod-file) and [python docs](https://www.gitpod.io/docs/languages/python))
+
+
+## Gitpod Setup
+
+Using the gitpod link should present you with a screen like the following to use your github account to authenticate with gitpod (you need a github account for this).
+![Gitpod continue with github screen](images/2022-06-30-15-13-20.png)
+
+After confirming, you should soon see a screen like the following.
+It will take some time (less than 2 minutes most likely) for it to download and install the necessary packages.
+
+Once you see the "You can now view your Streamlit app in the browser." message it should open a new tab
 
 ## Local Setup
 
@@ -47,6 +58,7 @@ streamlit run streamlit_app.py
 ```
 
 Open your browser to [http://localhost:8501/](http://localhost:8501/) if it doesn't open automatically.
+
 
 ## Deploy
 

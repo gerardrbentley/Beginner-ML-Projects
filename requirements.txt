@@ -1,1 +1,8 @@
+gym==0.23.1
+httpx==0.22.0
+nltk==3.7
+opencv-python-headless==4.5.5.64
+Pillow==9.1.0
+scikit-learn==1.1.1
 streamlit==1.10.0
+u8darts==0.17.1
