@@ -4,7 +4,7 @@ Streamlit App Boilerplate that contains everything you need to get running.
 
 Built with ❤️ by [Gerard Bentley](https://github.com/gerardrbentley)
 
-<a href="https://gitpod.io/#https://github.com/gerardrbentley/beginner_ai" rel="nofollow noopener noreferrer" target="_blank" class="after:hidden"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod"></a>
+<a href="https://gitpod.io/#https://github.com/gerardrbentley/Beginner-ML-Projects" rel="nofollow noopener noreferrer" target="_blank" class="after:hidden"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod"></a>
 
 Click the gitpod link above to set up your own development environment in the cloud without downloading or installing anything!
 (See below for local setup instructions)
