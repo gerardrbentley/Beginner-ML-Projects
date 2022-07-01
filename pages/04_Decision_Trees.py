@@ -212,3 +212,5 @@ else:
         prediction[0]
     (species,) = species_encoder.inverse_transform([prediction])
     st.write(f"Most likely an **{species}** Penguin!")
+
+render_end()
