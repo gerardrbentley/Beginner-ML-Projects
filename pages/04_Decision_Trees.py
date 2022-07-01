@@ -1,5 +1,9 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Decision Trees - Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.header("Decision Trees Demo 🌲", "nlp")
 
 st.write(
@@ -78,9 +82,13 @@ features = penguin_df[feature_cols]
 features["island"] = island_encoder.fit_transform(penguin_df["island"])
 features["sex"] = sex_encoder.fit_transform(penguin_df["sex"])
 
-model = HistGradientBoostingClassifier(
-    random_state=47, categorical_features=categorical_column_mask
-)
+
+@st.experimental_singleton
+def get_model():
+    model = HistGradientBoostingClassifier(
+        random_state=47, categorical_features=categorical_column_mask
+    )
+    return model
 
 
 def get_importances(model, features, labels):
@@ -96,8 +104,9 @@ def get_importances(model, features, labels):
     return importances
 
 
-@st.experimental_singleton
-def run_cross():
+@st.experimental_memo
+def run_cross(features, labels):
+    model = get_model()
     results = cross_validate(
         model,
         features,
@@ -108,13 +117,32 @@ def run_cross():
         return_estimator=True,
     )
     importances = [
-        get_importances(model, features, labels) for model in results["estimator"]
+        get_importances(cv_model, features, labels) for cv_model in results["estimator"]
     ]
     results["feature_importance"] = importances
     return results
 
 
-results = run_cross()
+def render_end():
+    st.write(
+        """## Take it further:
+
+    - Compare results to simpler tabular models (Regression, Random Forest) or other Gradient Boosting implementations (XGBoost, LightGBM, CatBoost)
+    - Perform a 'regression' task instead of 'classification' to get a pseudo-confidence score from the model
+    - Utilize Quantile Losses instead of Mean losses to assess confidence intervals
+    - Explore tabular models in other use cases such as Time Series analysis
+    """
+    )
+
+    if st.checkbox("Show Code (~190 lines)"):
+        with open(__file__, "r") as f:
+            st.code(f.read())
+    st.stop()
+
+
+if not st.checkbox("Press Here to Run K-Fold Cross Validation"):
+    render_end()
+results = run_cross(features, labels)
 st.header("Accuracy scores over 5-fold Cross Validation")
 trained_models = results["estimator"]
 training_scores = results["train_score"]
@@ -184,18 +212,3 @@ else:
         prediction[0]
     (species,) = species_encoder.inverse_transform([prediction])
     st.write(f"Most likely an **{species}** Penguin!")
-
-
-st.write(
-    """## Take it further:
-
-- Compare results to simpler tabular models (Regression, Random Forest) or other Gradient Boosting implementations (XGBoost, LightGBM, CatBoost)
-- Perform a 'regression' task instead of 'classification' to get a pseudo-confidence score from the model
-- Utilize Quantile Losses instead of Mean losses to assess confidence intervals
-- Explore tabular models in other use cases such as Time Series analysis
-"""
-)
-
-if st.checkbox("Show Code (~190 lines)"):
-    with open(__file__, "r") as f:
-        st.code(f.read())

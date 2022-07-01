@@ -57,7 +57,7 @@ python -m venv venv
 python -m pip install -r requirements.txt
 
 # Run the streamlit app
-streamlit run streamlit_app.py
+streamlit run Home.py
 ```
 
 Open your browser to [http://localhost:8501/](http://localhost:8501/) if it doesn't open automatically.

@@ -1,5 +1,9 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Time Series - Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.header("Time Series Demo ⏰", "time-series")
 
 st.write(

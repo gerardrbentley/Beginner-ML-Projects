@@ -7,6 +7,10 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(
+    page_title="RL - Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.subheader("(RL) Reinforcement Learning 🤖", "rl")
 
 st.write(

@@ -1,5 +1,8 @@
 import streamlit as st
-
+st.set_page_config(
+    page_title="Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.header("Beginner Machine Learning (ML) 🤖🧠")
 
 st.subheader(

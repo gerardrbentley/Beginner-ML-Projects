@@ -1,5 +1,9 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="NLP - Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.header("(NLP) Natural Language Processing Demo 🗣", "nlp")
 
 st.write(

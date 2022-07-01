@@ -6,6 +6,10 @@ import numpy as np
 import streamlit as st
 from PIL import Image
 
+st.set_page_config(
+    page_title="CV - Beginner Machine Learning",
+    page_icon="🤖",
+)
 st.header("(CV) Computer Vision Demo 👀", "cv")
 
 st.write(
