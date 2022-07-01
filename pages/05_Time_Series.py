@@ -86,13 +86,13 @@ def render_end():
     st.write(
         """## Take it further:
 
+- Explore the model's performance based on different error metrics
 - Perform a grid search over different model parameters to find the best fit
 - Create an ensemble model to forecast using predictions from multiple models
-- Explore Neural Network models used for forecasting applications
-- Experiment with different Forecast Horizons and Backtesting periods"""
+- Explore Neural Network models used for forecasting applications"""
     )
 
-    if st.checkbox("Show Code (~190 lines)"):
+    if st.checkbox("Show Code (~340 lines)"):
         with open(__file__, "r") as f:
             st.code(f.read())
     st.stop()
